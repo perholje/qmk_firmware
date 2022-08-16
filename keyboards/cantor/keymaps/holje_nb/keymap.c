@@ -10,8 +10,8 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x6_3(
         KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T,           KC_Y, KC_U, KC_I, KC_O, KC_P, NO_ARNG,
-        KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G,          KC_H, KC_J, KC_K, KC_L, NO_OSTR, NO_AE,
-        KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,          KC_N, KC_M, NO_COMM, NO_DOT, NO_MINS, KC_RSFT,
+        KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G,          KC_H, KC_J, KC_K, KC_L, NO_OSTR, NO_AE,
+        KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_B,          KC_N, KC_M, NO_COMM, NO_DOT, NO_MINS, KC_RSFT,
         KC_RALT, KC_LALT, KC_TAB,                       KC_ENT, LT(1,KC_SPC), LT(2,KC_BSPC)),
     [1] = LAYOUT_split_3x6_3(
         KC_TRNS, NO_EXLM, NO_DQUO, NO_HASH, NO_DLR, NO_PERC,      NO_SLSH, NO_LPRN, NO_RPRN, NO_LABK, NO_RABK, NO_GRV,
