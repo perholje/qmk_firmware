@@ -12,15 +12,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T,           KC_Y, KC_U, KC_I, KC_O, KC_P, NO_ARNG,
         KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G,          KC_H, KC_J, KC_K, KC_L, NO_OSTR, NO_AE,
         KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_B,          KC_N, KC_M, NO_COMM, NO_DOT, NO_MINS, KC_RSFT,
-        KC_RALT, KC_LALT, KC_TAB,                       KC_ENT, LT(1,KC_SPC), LT(2,KC_BSPC)),
+        KC_LGUI, KC_LALT, KC_TAB,                       KC_ENT, LT(1,KC_SPC), LT(2,KC_BSPC)),
     [1] = LAYOUT_split_3x6_3(
-        KC_TRNS, NO_EXLM, NO_DQUO, NO_HASH, NO_DLR, NO_PERC,      NO_SLSH, NO_LPRN, NO_RPRN, NO_LABK, NO_RABK, NO_GRV,
+        KC_TRNS, NO_EXLM, NO_DQUO, NO_HASH, NO_DLR, NO_PERC,      NO_SLSH, NO_LPRN, NO_RPRN, NO_LABK, NO_RABK, NO_EQL,
         KC_TRNS, NO_CIRC, NO_AMPR, NO_ASTR, NO_LBRC, NO_RBRC,       KC_HOME, KC_LEFT, KC_UP, KC_RGHT, NO_QUOT, NO_PLUS,
-        KC_TRNS, NO_BSLS, NO_PIPE, NO_AT, NO_LCBR, NO_RCBR,     NO_QUES, KC_DEL, KC_DOWN, KC_END, NO_EQL, KC_TRNS,
+        KC_TRNS, NO_BSLS, NO_PIPE, NO_AT, NO_LCBR, NO_RCBR,     NO_QUES, KC_DEL, KC_DOWN, KC_END, NO_GRV, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS),
     [2] = LAYOUT_split_3x6_3(
         KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,             KC_NO, KC_P7, KC_P8, KC_P9, KC_PMNS, KC_NO,
         KC_TRNS, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10,            KC_NO, KC_P4, KC_P5, KC_P6, KC_PPLS, KC_NO,
-        KC_TRNS, KC_F11, KC_F12, KC_NO, KC_NO, KC_LGUI,         KC_P0, KC_P1, KC_P2, KC_P3, KC_PDOT, KC_TRNS,
+        KC_TRNS, KC_F11, KC_F12, KC_NO, KC_NO, KC_NO,         KC_NO, KC_P1, KC_P2, KC_P3, KC_P0, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS)
 };
