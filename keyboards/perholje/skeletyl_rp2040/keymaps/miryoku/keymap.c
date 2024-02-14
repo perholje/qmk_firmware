@@ -1,6 +1,7 @@
 // Copyright 2023 QMK
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#include "keycodes.h"
 #include "process_tap_dance.h"
 #include "quantum.h"
 #include QMK_KEYBOARD_H
@@ -17,23 +18,22 @@ enum keymap_layers {
 
 // Tap-dance
 enum {
-  TD_RESET = 0,
-  TD_CAPS,
+    TD_RESET = 0,
+    TD_CAPS,
 };
 
 void safe_reset(tap_dance_state_t *state, void *user_data) {
-  if (state->count >= 2) {
-    // Reset the keyboard if you tap the key more than 2 times
-    reset_keyboard();
-    reset_tap_dance(state);
-  }
+    if (state->count >= 2) {
+        // Reset the keyboard if you tap the key more than 2 times
+        reset_keyboard();
+        reset_tap_dance(state);
+    }
 }
 
 tap_dance_action_t tap_dance_actions[] = {
-  [TD_RESET] = ACTION_TAP_DANCE_FN(safe_reset),
-  [TD_CAPS]  = ACTION_TAP_DANCE_DOUBLE(CW_TOGG, KC_CAPS_LOCK),
+    [TD_RESET] = ACTION_TAP_DANCE_FN(safe_reset),
+    [TD_CAPS]  = ACTION_TAP_DANCE_DOUBLE(QK_CAPS_WORD_TOGGLE, KC_CAPS_LOCK),
 };
-
 
 // Homerow mods
 #define SUP_A LGUI_T(KC_A)
@@ -56,7 +56,7 @@ tap_dance_action_t tap_dance_actions[] = {
 #define ESC_MED LT(LAYER_MEDIA, KC_ESC)
 
 #define RELOAD TD(TD_RESET)
-#define CAPWRD TD(TD_CAPS)
+#define CAPWRD QK_CAPS_WORD_TOGGLE // TD(TD_CAPS)
 
 #define U_UND LCTL(KC_Z)
 #define U_RDO LCTL(KC_Y)
@@ -65,14 +65,15 @@ tap_dance_action_t tap_dance_actions[] = {
 #define U_PST LSFT(KC_INS)
 #define U_SNUBS LSFT(KC_NUBS)
 
-#define ____________RIGHT_R1_BLANK________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RELOAD,   
-#define ____________RIGHT_R2_BLANK________________ XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,  
-#define ____________RIGHT_R3_BLANK________________ XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX,  
-#define ______________LEFT_R1_BLANK________________ RELOAD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+#define ____________RIGHT_R1_BLANK________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RELOAD,
+#define ____________RIGHT_R2_BLANK________________ XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
+#define ____________RIGHT_R3_BLANK________________ XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX,
+#define ______________LEFT_R1_BLANK________________ RELOAD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 #define ______________LEFT_R2_BLANK________________ KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,
 #define ______________LEFT_R3_BLANK________________ XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,
 #define ______BLANK_THUMBS_______ XXXXXXX, XXXXXXX, XXXXXXX
 
+// clang-format off
 // Miryoku Colemak-DH
 #define LAYOUT_LAYER_BASE                                                                         \
     KC_Q,	 KC_W,	  KC_F,	   KC_P,    KC_B,	    KC_J,	 KC_L,    KC_U,    KC_Y,    KC_QUOT,  \
@@ -127,3 +128,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LAYER_SYMBOLS]     = LAYOUT_wrapper(LAYOUT_LAYER_SYMBOLS),
     [LAYER_FUNCTION]    = LAYOUT_wrapper(LAYOUT_LAYER_FUNCTION),
 };
+// clang-format on
