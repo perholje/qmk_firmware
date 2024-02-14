@@ -63,58 +63,67 @@ tap_dance_action_t tap_dance_actions[] = {
 #define U_CUT LSFT(KC_DEL)
 #define U_CPY LCTL(KC_INS)
 #define U_PST LSFT(KC_INS)
+#define U_SNUBS LSFT(KC_NUBS)
+
+#define ____________RIGHT_R1_BLANK________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RELOAD,   
+#define ____________RIGHT_R2_BLANK________________ XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,  
+#define ____________RIGHT_R3_BLANK________________ XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX,  
+#define ______________LEFT_R1_BLANK________________ RELOAD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+#define ______________LEFT_R2_BLANK________________ KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,
+#define ______________LEFT_R3_BLANK________________ XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,
+#define ______BLANK_THUMBS_______ XXXXXXX, XXXXXXX, XXXXXXX
 
 // Miryoku Colemak-DH
-#define LAYOUT_LAYER_BASE                                                                      \
-    KC_Q,	KC_W,	KC_F,	KC_P,	KC_B,	    KC_J,	KC_L,	KC_U,	KC_Y,		KC_QUOT,   \
-    SUP_A,	ALT_R,	CTRL_S,	SHFT_T,	KC_G,	    KC_M,	SHFT_N,	CTRL_E,	ALT_I,		SUP_O,     \
-    KC_Z,	RALT_X,	KC_C,	KC_D,	KC_V,	    KC_K,	KC_H,	KC_COMM, RALT_DOT,	KC_SLSH,   \
-               DEL_FUN, BSP_NUM, TAB_SYM,       ENT_MOU, SPC_NAV, ESC_MED
+#define LAYOUT_LAYER_BASE                                                                         \
+    KC_Q,	 KC_W,	  KC_F,	   KC_P,    KC_B,	    KC_J,	 KC_L,    KC_U,    KC_Y,    KC_QUOT,  \
+    SUP_A,	 ALT_R,	  CTRL_S,  SHFT_T,  KC_G,	    KC_M,	 SHFT_N,  CTRL_E,  ALT_I,   SUP_O,    \
+    KC_Z,	 RALT_X,  KC_C,    KC_D,    KC_V,	    KC_K,	 KC_H,	  KC_COMM, RALT_DOT,KC_SLSH,  \
+                      DEL_FUN, BSP_NUM, TAB_SYM,    ENT_MOU, SPC_NAV, ESC_MED
 
-#define LAYOUT_LAYER_NAVIGATION                                                               \
-    KC_PGUP, KC_HOME, KC_UP,  KC_END, KC_INS,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RELOAD,   \
-    KC_PGDN, KC_LEFT, KC_DOWN,KC_RGHT,CAPWRD,   XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,  \
-    U_UND,   U_CUT,   U_CPY,  U_PST,   U_RDO,   XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX,  \
-                  KC_DEL,  KC_BSPC,   KC_TAB,   XXXXXXX, XXXXXXX, XXXXXXX
+#define LAYOUT_LAYER_NAVIGATION                                                                   \
+    KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_INS,     ____________RIGHT_R1_BLANK________________    \
+    KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, CAPWRD,     ____________RIGHT_R2_BLANK________________    \
+    U_UND,   U_CUT,   U_CPY,   U_PST,   U_RDO,      ____________RIGHT_R3_BLANK________________    \
+                      KC_DEL,  KC_BSPC, KC_TAB,     ______BLANK_THUMBS_______
 
-#define LAYOUT_LAYER_POINTER                                                                       \
-    KC_WH_U, XXXXXXX, KC_MS_U, XXXXXXX, XXXXXXX,     XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, RELOAD,  \
-    KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,     XXXXXXX,  KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, \
-    U_UND,   U_CUT,   U_CPY,   U_PST,   U_RDO,       XXXXXXX,  XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, \
-             KC_MS_BTN3, KC_MS_BTN1,  KC_MS_BTN2,    XXXXXXX,  XXXXXXX, XXXXXXX
+#define LAYOUT_LAYER_POINTER                                                                      \
+    KC_WH_U, XXXXXXX, KC_MS_U, XXXXXXX, XXXXXXX,    ____________RIGHT_R1_BLANK________________    \
+    KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,    ____________RIGHT_R2_BLANK________________    \
+    U_UND,   U_CUT,   U_CPY,   U_PST,   U_RDO,      ____________RIGHT_R3_BLANK________________    \
+             KC_MS_BTN3, KC_MS_BTN1,  KC_MS_BTN2,   ______BLANK_THUMBS_______
 
-#define LAYOUT_LAYER_MEDIA                                                                          \
-    XXXXXXX, XXXXXXX,  KC_VOLU, XXXXXXX,  XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RELOAD,  \
-    XXXXXXX, KC_MPRV,  KC_VOLD, KC_MNXT,  MU_TOGG,     XXXXXXX, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, \
-    XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX, \
-                       KC_MUTE, KC_MPLY,  KC_MSTP,     XXXXXXX, XXXXXXX, XXXXXXX
+#define LAYOUT_LAYER_MEDIA                                                                        \
+    XXXXXXX, XXXXXXX, KC_VOLU, XXXXXXX, XXXXXXX,    ____________RIGHT_R1_BLANK________________    \
+    XXXXXXX, KC_MPRV, KC_VOLD, KC_MNXT, MU_TOGG,    ____________RIGHT_R2_BLANK________________    \
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    ____________RIGHT_R3_BLANK________________    \
+                      KC_MUTE, KC_MPLY, KC_MSTP,    ______BLANK_THUMBS_______
 
-#define LAYOUT_LAYER_NUMERAL                                                                   \
-    RELOAD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_NUBS,   KC_7,  KC_8,  KC_9,  KC_LBRC,  \
-    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_EQL,    KC_4,  KC_5,  KC_6,  KC_SCLN,  \
-    XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,     KC_BSLS,   KC_1,  KC_2,  KC_3,  KC_GRV,   \
-                      XXXXXXX, XXXXXXX, XXXXXXX,     KC_MINS,   KC_0,  KC_DOT
+#define LAYOUT_LAYER_NUMERAL                                                                      \
+    ______________LEFT_R1_BLANK________________     KC_NUBS, KC_7,    KC_8,    KC_9,    KC_LBRC,  \
+    ______________LEFT_R2_BLANK________________     KC_EQL,  KC_4,    KC_5,    KC_6,    KC_SCLN,  \
+    ______________LEFT_R3_BLANK________________     KC_BSLS, KC_1,    KC_2,    KC_3,    KC_GRV,   \
+                      ______BLANK_THUMBS_______,    KC_MINS, KC_0,    KC_DOT
 
-#define LAYOUT_LAYER_SYMBOLS                                                                            \
-    RELOAD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     LSFT(KC_NUBS), KC_AMPR, KC_ASTR, KC_LPRN, KC_LCBR, \
-    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_PLUS,   KC_DLR,  KC_PERC, KC_CIRC, KC_COLN,     \
-    XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,     KC_PIPE,   KC_EXLM, KC_AT,   KC_HASH, KC_TILD,     \
-                      XXXXXXX, XXXXXXX, XXXXXXX,     KC_UNDS,   KC_LPRN, KC_RPRN
+#define LAYOUT_LAYER_SYMBOLS                                                                      \
+    ______________LEFT_R1_BLANK________________     U_SNUBS, KC_AMPR, KC_ASTR, KC_LPRN, KC_LCBR,  \
+    ______________LEFT_R2_BLANK________________     KC_PLUS, KC_DLR,  KC_PERC, KC_CIRC, KC_COLN,  \
+    ______________LEFT_R3_BLANK________________     KC_PIPE, KC_EXLM, KC_AT,   KC_HASH, KC_TILD,  \
+                      ______BLANK_THUMBS_______,    KC_UNDS, KC_LPRN, KC_RPRN
 
-#define LAYOUT_LAYER_FUNCTION                                                                      \
-    RELOAD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_PSCR,   KC_F7,   KC_F8,   KC_F9,   KC_F12, \
-    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_SCRL,   KC_F4,   KC_F5,   KC_F6,   KC_F11, \
-    XXXXXXX, KC_RALT, XXXXXXX, XXXXXXX, XXXXXXX,     KC_PAUS,   KC_F1,   KC_F2,   KC_F3,   KC_F10, \
-                      XXXXXXX, XXXXXXX, XXXXXXX,     KC_TAB,    KC_SPC,  KC_APP
+#define LAYOUT_LAYER_FUNCTION                                                                     \
+    ______________LEFT_R1_BLANK________________     KC_PSCR, KC_F7,   KC_F8,   KC_F9,   KC_F12,   \
+    ______________LEFT_R2_BLANK________________     KC_SCRL, KC_F4,   KC_F5,   KC_F6,   KC_F11,   \
+    ______________LEFT_R3_BLANK________________     KC_PAUS, KC_F1,   KC_F2,   KC_F3,   KC_F10,   \
+                      ______BLANK_THUMBS_______,    KC_TAB,  KC_SPC,  KC_APP
 
 #define LAYOUT_wrapper(...) LAYOUT_split_3x5_3(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [LAYER_BASE] = LAYOUT_wrapper(LAYOUT_LAYER_BASE),
+    [LAYER_BASE]        = LAYOUT_wrapper(LAYOUT_LAYER_BASE),
     [LAYER_NAVIGATION]  = LAYOUT_wrapper(LAYOUT_LAYER_NAVIGATION),
-    [LAYER_POINTER] = LAYOUT_wrapper(LAYOUT_LAYER_POINTER),
-    [LAYER_MEDIA] = LAYOUT_wrapper(LAYOUT_LAYER_MEDIA),
-    [LAYER_NUMERAL] = LAYOUT_wrapper(LAYOUT_LAYER_NUMERAL),
-    [LAYER_SYMBOLS] = LAYOUT_wrapper(LAYOUT_LAYER_SYMBOLS),
-    [LAYER_FUNCTION] = LAYOUT_wrapper(LAYOUT_LAYER_FUNCTION),
+    [LAYER_POINTER]     = LAYOUT_wrapper(LAYOUT_LAYER_POINTER),
+    [LAYER_MEDIA]       = LAYOUT_wrapper(LAYOUT_LAYER_MEDIA),
+    [LAYER_NUMERAL]     = LAYOUT_wrapper(LAYOUT_LAYER_NUMERAL),
+    [LAYER_SYMBOLS]     = LAYOUT_wrapper(LAYOUT_LAYER_SYMBOLS),
+    [LAYER_FUNCTION]    = LAYOUT_wrapper(LAYOUT_LAYER_FUNCTION),
 };
